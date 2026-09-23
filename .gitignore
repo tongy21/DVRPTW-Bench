@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.log
+*.ckpt
+*.pt
+*.pth
+*.pem
+*.key
+*_solution.png
+*_solution.svg
+*_viz_data.json
+staging/
