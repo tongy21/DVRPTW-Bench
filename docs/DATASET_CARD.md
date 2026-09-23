@@ -41,6 +41,19 @@ available_time + ceil(min_depot_distance / vehicle_speed) <= tw_end
 Candidate instances that fail reachability are rejected rather than repaired.
 The fixed-30 screening run must serve at least 95 percent of customers.
 
+### Historical duplicate exceptions
+
+The original formal replica block retains two documented same-scenario
+duplicates caused by the early `replica * 100` seed stride overlapping after
+repeated candidate rejection:
+
+- `US/n500/dod90/replica0.json` and `replica1.json`;
+- `RS/n500/dod95/replica3.json` and `replica4.json`.
+
+They are retained unchanged because this repository publishes the exact
+instances used by the reported experiments. The extra-5 block uses a
+non-overlapping seed stride and has no within-scenario duplicates.
+
 ## Exclusions
 
 The repository does not include trained model checkpoints, result logs,

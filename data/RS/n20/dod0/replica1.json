@@ -1,0 +1,554 @@
+{
+  "name": "20_single_depot_dod0_realistic_bursty_stationary",
+  "num_vehicles": 200,
+  "capacity": 500,
+  "depots": [
+    {
+      "id": 0,
+      "x": 500,
+      "y": 500
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "x": 557,
+      "y": 896,
+      "demand": 8,
+      "tw_start": 496,
+      "tw_end": 593,
+      "service_time": 2,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 464,
+      "temporal_profile_id": 9
+    },
+    {
+      "id": 2,
+      "x": 719,
+      "y": 43,
+      "demand": 25,
+      "tw_start": 1276,
+      "tw_end": 1350,
+      "service_time": 4,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 1162,
+      "temporal_profile_id": 14
+    },
+    {
+      "id": 3,
+      "x": 209,
+      "y": 967,
+      "demand": 63,
+      "tw_start": 836,
+      "tw_end": 936,
+      "service_time": 7,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 749,
+      "temporal_profile_id": 17
+    },
+    {
+      "id": 4,
+      "x": 189,
+      "y": 509,
+      "demand": 32,
+      "tw_start": 166,
+      "tw_end": 257,
+      "service_time": 4,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 73,
+      "temporal_profile_id": 15
+    },
+    {
+      "id": 5,
+      "x": 402,
+      "y": 591,
+      "demand": 45,
+      "tw_start": 484,
+      "tw_end": 573,
+      "service_time": 6,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 368,
+      "temporal_profile_id": 4
+    },
+    {
+      "id": 6,
+      "x": 539,
+      "y": 444,
+      "demand": 57,
+      "tw_start": 1128,
+      "tw_end": 1207,
+      "service_time": 7,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 1031,
+      "temporal_profile_id": 5
+    },
+    {
+      "id": 7,
+      "x": 308,
+      "y": 437,
+      "demand": 15,
+      "tw_start": 183,
+      "tw_end": 283,
+      "service_time": 2,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 93,
+      "temporal_profile_id": 8
+    },
+    {
+      "id": 8,
+      "x": 536,
+      "y": 287,
+      "demand": 38,
+      "tw_start": 1177,
+      "tw_end": 1297,
+      "service_time": 5,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 1136,
+      "temporal_profile_id": 2
+    },
+    {
+      "id": 9,
+      "x": 631,
+      "y": 853,
+      "demand": 33,
+      "tw_start": 819,
+      "tw_end": 880,
+      "service_time": 4,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 707,
+      "temporal_profile_id": 11
+    },
+    {
+      "id": 10,
+      "x": 774,
+      "y": 389,
+      "demand": 9,
+      "tw_start": 1257,
+      "tw_end": 1343,
+      "service_time": 2,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 1165,
+      "temporal_profile_id": 6
+    },
+    {
+      "id": 11,
+      "x": 264,
+      "y": 689,
+      "demand": 22,
+      "tw_start": 1139,
+      "tw_end": 1225,
+      "service_time": 3,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 1093,
+      "temporal_profile_id": 16
+    },
+    {
+      "id": 12,
+      "x": 280,
+      "y": 265,
+      "demand": 32,
+      "tw_start": 805,
+      "tw_end": 877,
+      "service_time": 4,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 716,
+      "temporal_profile_id": 19
+    },
+    {
+      "id": 13,
+      "x": 803,
+      "y": 665,
+      "demand": 34,
+      "tw_start": 1096,
+      "tw_end": 1203,
+      "service_time": 4,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 1063,
+      "temporal_profile_id": 7
+    },
+    {
+      "id": 14,
+      "x": 808,
+      "y": 589,
+      "demand": 82,
+      "tw_start": 251,
+      "tw_end": 328,
+      "service_time": 9,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 178,
+      "temporal_profile_id": 1
+    },
+    {
+      "id": 15,
+      "x": 443,
+      "y": 655,
+      "demand": 39,
+      "tw_start": 497,
+      "tw_end": 607,
+      "service_time": 5,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 378,
+      "temporal_profile_id": 10
+    },
+    {
+      "id": 16,
+      "x": 983,
+      "y": 739,
+      "demand": 41,
+      "tw_start": 783,
+      "tw_end": 894,
+      "service_time": 5,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 701,
+      "temporal_profile_id": 18
+    },
+    {
+      "id": 17,
+      "x": 269,
+      "y": 405,
+      "demand": 50,
+      "tw_start": 758,
+      "tw_end": 822,
+      "service_time": 6,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 660,
+      "temporal_profile_id": 3
+    },
+    {
+      "id": 18,
+      "x": 619,
+      "y": 467,
+      "demand": 92,
+      "tw_start": 1169,
+      "tw_end": 1259,
+      "service_time": 10,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 1106,
+      "temporal_profile_id": 0
+    },
+    {
+      "id": 19,
+      "x": 424,
+      "y": 94,
+      "demand": 54,
+      "tw_start": 493,
+      "tw_end": 609,
+      "service_time": 6,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 421,
+      "temporal_profile_id": 12
+    },
+    {
+      "id": 20,
+      "x": 274,
+      "y": 593,
+      "demand": 17,
+      "tw_start": 596,
+      "tw_end": 680,
+      "service_time": 3,
+      "is_dynamic": false,
+      "available_time": 0,
+      "type": "Synthetic-realistic_bursty",
+      "cluster_id": 0,
+      "release_period": -1,
+      "latent_release_time": 558,
+      "temporal_profile_id": 13
+    }
+  ],
+  "generation_config": {
+    "generator": "SpatioTemporalSVRPGenerator",
+    "seed": 20260831,
+    "temporal_mode": "realistic_bursty",
+    "spatial_mode": "stationary",
+    "horizon": 1440,
+    "release_horizon": 1200,
+    "reaction_buffer": 30,
+    "feasibility_vehicle_speed": 5.0,
+    "immediate_reachability_constraint": "available_time + min_depot_travel <= tw_end",
+    "min_depot_travel_rounding": "ceil(euclidean_distance / vehicle_speed)",
+    "lead_time_range": [
+      30,
+      120
+    ],
+    "time_window_width_range": [
+      60,
+      120
+    ],
+    "burst_centers": [
+      705,
+      1109
+    ],
+    "burst_count": 2,
+    "burst_profile": "reality_calibrated",
+    "burst_parameter_source": "mode_default_randomized",
+    "burst_width": 60.636183342090625,
+    "burst_width_sampling_range": null,
+    "burst_width_semantics": "gaussian_standard_deviation_minutes",
+    "burst_widths": [
+      51.619551061521335,
+      69.65281562265992
+    ],
+    "burst_strength": 0.5402595264814375,
+    "burst_strength_sampling_range": null,
+    "uniform_background_share": 0.4597404735185625,
+    "background_sampling": "uniform_outside_peak_windows",
+    "burst_component_names": [
+      "lunch",
+      "dinner"
+    ],
+    "burst_component_shares": [
+      0.31628140028792673,
+      0.22397812619351076
+    ],
+    "burst_peak_windows": [
+      [
+        645.0,
+        780.0
+      ],
+      [
+        1020.0,
+        1140.0
+      ]
+    ],
+    "burst_center_sampling_ranges": [
+      [
+        675.0,
+        735.0
+      ],
+      [
+        1050.0,
+        1110.0
+      ]
+    ],
+    "burst_width_sampling_ranges": [
+      [
+        50.0,
+        60.0
+      ],
+      [
+        60.0,
+        75.0
+      ]
+    ],
+    "burst_share_sampling_ranges": [
+      [
+        0.28,
+        0.32
+      ],
+      [
+        0.19,
+        0.23
+      ]
+    ],
+    "realistic_calibration_targets": {
+      "source": "Meituan-INFORMS operational food-delivery data",
+      "lunch_window_minutes": [
+        645,
+        780
+      ],
+      "lunch_order_share": 0.2992,
+      "dinner_window_minutes": [
+        1020,
+        1140
+      ],
+      "dinner_order_share": 0.2122,
+      "two_peak_window_share": 0.5114,
+      "max_30_minute_share": 0.0956,
+      "max_60_minute_share": 0.1702,
+      "peak_to_mean_15_minute_20h": 4.12
+    },
+    "spatial_period_count": 4,
+    "spatial_period_boundaries": [
+      0.0,
+      300.0,
+      600.0,
+      900.0,
+      1200.0
+    ],
+    "hotspot_strength": 0.8,
+    "hotspot_schedule": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "hotspot_schedule_policy": "balanced_random",
+    "hotspot_clusters_per_period": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "stationary_cluster_weights": null
+  },
+  "generation_stats": {
+    "dynamic_count": 0,
+    "static_count": 20,
+    "cluster_node_counts": [
+      20
+    ],
+    "cluster_dynamic_counts": [
+      0
+    ],
+    "cluster_dynamic_rates": [
+      0.0
+    ],
+    "release_counts_by_period": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "period_cluster_dynamic_counts": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "hotspot_share_by_period": null,
+    "hotspot_lift_by_period": null,
+    "capacity_fallback_count": 0,
+    "release_statistics_bin_width": 30,
+    "release_bin_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "release_bin_fano_factor": 0.0,
+    "minimum_reaction_margin": null,
+    "minimum_immediate_reachability_slack": 194,
+    "mean_immediate_reachability_slack": 799.7,
+    "immediate_reachability_violation_count": 0,
+    "mean_time_window_width": 90.7
+  }
+}
