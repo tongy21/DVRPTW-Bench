@@ -10,6 +10,12 @@ __pycache__/
 *.pth
 *.pem
 *.key
+checkpoints/
+results/
+saved_test_results/
+outputs/
+assets/
+build/
 *_solution.png
 *_solution.svg
 *_viz_data.json

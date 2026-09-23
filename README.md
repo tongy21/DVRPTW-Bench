@@ -1,61 +1,120 @@
-# DVRPTW Strict-v2 Dataset
+# DVRPTW dataset
 
-This repository contains the strict-v2 dynamic vehicle-routing benchmark used
-for the DVRPTW experiments. The release covers six spatiotemporal demand
-regimes, five nominal instance sizes, six degrees of dynamism, and ten
-replicas.
+This repository provides the dataset and implementation used to study dynamic
+vehicle routing with time windows under different temporal arrival profiles
+and spatial demand patterns. It contains 1,800 single-depot problem instances
+and the code framework for data generation, dynamic simulation, and the
+evaluated routing methods.
 
-## Release matrix
+## Dataset design
 
 | Dimension | Values |
 |---|---|
-| Scenario | `US`, `UV`, `BS`, `BV`, `RS`, `RV` |
+| Scenario | `US`, `RS`, `BS`, `UV`, `RV`, `BV` |
 | Customers | `20`, `50`, `100`, `200`, `500` |
-| DoD | `0`, `0.2`, `0.5`, `0.8`, `0.9`, `0.95` |
+| Degree of dynamism | `0`, `0.2`, `0.5`, `0.8`, `0.9`, `0.95` |
 | Replica | `0`--`9` |
 
-The complete release contains 1,800 problem JSON files. Replicas `0`--`4`
-come from the original formal block and replicas `5`--`9` from the independently
-generated extra-5 block.
+Each of the 180 scenario--scale--DoD cells contains ten replicas. The six
+scenario codes combine three temporal profiles with two spatial profiles:
 
-## Repository layout
+| Code | Temporal profile | Spatial profile |
+|---|---|---|
+| `US` | Uniform | Stationary |
+| `RS` | Double peak | Stationary |
+| `BS` | Strong burst | Stationary |
+| `UV` | Uniform | Time-varying hotspots |
+| `RV` | Double peak | Time-varying hotspots |
+| `BV` | Strong burst | Time-varying hotspots |
+
+Customer locations are sampled from a scale-dependent Gaussian mixture. Each
+request records its coordinates, demand, service duration, time window, release
+time, dynamic/static status, temporal profile, and spatial cluster. Instances
+use one depot, 200 vehicles of capacity 500, a 1,440-minute operating horizon,
+and a vehicle speed of five distance units per minute.
+
+## Repository structure
 
 ```text
 data/
   US/
-    n20/dod0/replica0.json
-    ...
-  UV/
-  BS/
-  BV/
+    n20/
+      dod0/
+        replica0.json
+        ...
   RS/
+  BS/
+  UV/
   RV/
-docs/
-  DATASET_CARD.md
-  GENERATION.md
-  SCHEMA.md
+  BV/
 metadata/
   instances.csv
-scripts/
-  build_release.py
+src/
+  data_generation/
+  simulation/
+  solvers/
+  experimental_solvers/icd_mlco/
+  release_aware_mlco/
+requirements.txt
 ```
 
-Only canonical problem JSON files belong under `data/`. Screening
-visualizations, solver outputs, paper figures, checkpoints, and machine-local
-paths are intentionally excluded.
+`metadata/instances.csv` provides one row per instance with its scenario,
+temporal and spatial profiles, scale, DoD, replica, customer counts, minimum
+reachability slack, and repository-relative path.
 
-## Scenario codes
+## Code framework
 
-| Code | Temporal demand | Spatial demand |
-|---|---|---|
-| `US` | Uniform | Stationary |
-| `UV` | Uniform | Time-varying hotspots |
-| `BS` | Strong burst | Stationary |
-| `BV` | Strong burst | Time-varying hotspots |
-| `RS` | Realistic double peak | Stationary |
-| `RV` | Realistic double peak | Time-varying hotspots |
+The source tree includes:
 
-## Citation and license
+- the spatiotemporal instance generator and batch-generation entry points;
+- the rolling-horizon simulator and common route-validation logic;
+- HGS, OR-Tools, ALNS, ACO, tabu search, Lin--Kernighan, and nearest-neighbor
+  with 2-opt solvers;
+- RL4CO training and inference support for Attention, POMO, SymNCO, and
+  PolyNet;
+- ML-CO feature extraction, training, NumPy inference, and PC-HGS integration;
+- ICD future-scenario sampling and iterative dispatch; and
+- the release-aware HGS offline reference.
 
-Citation metadata and the release license will be finalized before the
-repository is made public.
+The default ICD configuration uses `instance_config` future sampling. Both the
+sampled-scenario lookahead stage and the final routing stage use unmodified HGS
+with a one-second time budget.
+
+## Running the code
+
+Install the Python dependencies and expose `src` on `PYTHONPATH`:
+
+```bash
+python -m pip install -r requirements.txt
+export PYTHONPATH=src
+```
+
+Python 3.10 or newer is recommended. Build the vendored PC-HGS source with:
+
+```bash
+cmake -S src/experimental_solvers/icd_mlco/vendor/pchgs \
+  -B src/experimental_solvers/icd_mlco/vendor/pchgs/build \
+  -DCMAKE_BUILD_TYPE=Release
+cmake --build src/experimental_solvers/icd_mlco/vendor/pchgs/build --parallel
+```
+
+The full dataset matrix can be generated with:
+
+```bash
+python -m data_generation.generate_dataset --output-root data
+```
+
+For example, run ICD on one instance with the repository defaults:
+
+```bash
+python -m experimental_solvers.icd_mlco.runner \
+  --solver icd \
+  --data-file data/US/n100/dod80/replica0.json \
+  --output-dir results
+```
+
+The ML-CO adapter uses the vendored PC-HGS source under
+`src/experimental_solvers/icd_mlco/vendor/pchgs`. Its Python configuration
+accepts paths to trained model weights when ML-CO inference is requested. The
+RL training entry points are `src/solvers/rl/train.py` and
+`src/solvers/rl/train_mixed_scale.py`.
