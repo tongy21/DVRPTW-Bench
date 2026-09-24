@@ -1,4 +1,4 @@
-# DVRPTW dataset
+# DVRPTW benchmark dataset
 
 This repository provides the dataset and implementation used to study dynamic
 vehicle routing with time windows under different temporal arrival profiles
